@@ -33,14 +33,14 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
-		<MauiImage Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'" Update="Resources\Images\splashbkg.svg" BaseSize="392,848" />
-		<MauiImage Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'" Update="Resources\Images\splashtext.svg" BaseSize="392,848" />
-		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
@@ -53,5 +53,13 @@
 
 	<ItemGroup>
 	  <InterfaceDefinition Include="LaunchScreen.storyboard" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Resources\Images\splashbkg.png" />
+	  <None Remove="Resources\Images\splashtext.png" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)'=='net7.0-ios'">
+	  <BundleResource Include="Resources\Images\splashbkg.png" />
+	  <BundleResource Include="Resources\Images\splashtext.png" />
 	</ItemGroup>
 </Project>
