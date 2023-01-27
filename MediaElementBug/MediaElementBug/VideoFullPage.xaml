@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    
+    Padding="0"
+    Shell.NavBarIsVisible="False"
+    Unloaded="MediaElementControl_Unloaded"
+    BackgroundColor="Black"
+    x:Class="Fm.Shared.Views.VideoFullPage">
+    <ContentPage.Content>
+        <Grid>
+            <!--Video-->
+            <toolkit:MediaElement Margin="0" x:Name="MediaElement" MediaEnded="MediaElement_MediaEnded"
+                                 ShouldShowPlaybackControls="True" ShouldAutoPlay="False"
+                />
+           
+            <!--Close View-->
+            <Label x:Name="VideoScreenExitCtl" Margin="15,10"  VerticalOptions="Start" HorizontalOptions="Start" 
+                        Style="{StaticResource LabelStyleIconFontLarge}"
+                        FontSize="20" 
+                        Text="X">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="VideoScreenExit"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

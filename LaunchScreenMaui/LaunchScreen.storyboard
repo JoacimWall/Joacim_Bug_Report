@@ -38,8 +38,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splashbkg" width="392" height="848"/>
-        <image name="splashtext" width="392" height="848"/>
+        <image name="splashbkg.png" width="128" height="128"/>
+        <image name="splashtext.png" width="128" height="128"/>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
