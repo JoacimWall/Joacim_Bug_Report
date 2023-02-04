@@ -6,9 +6,10 @@
     
     Padding="0"
     Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="Modal"
     Unloaded="MediaElementControl_Unloaded"
     BackgroundColor="Black"
-    x:Class="Fm.Shared.Views.VideoFullPage">
+    x:Class="Fm.SharedLib.Views.VideoFullPage">
     <ContentPage.Content>
         <Grid>
             <!--Video-->
