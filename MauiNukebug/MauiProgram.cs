@@ -18,7 +18,7 @@ public static class MauiProgram
 			});
 
 #if IOS
-		//builder.UseNuke(showDebugLogs: true);
+		builder.UseNuke(showDebugLogs: true);
 #endif
 
 #if DEBUG
