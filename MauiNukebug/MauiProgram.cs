@@ -13,9 +13,11 @@ public static class MauiProgram
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                fonts.AddFont("BabyPlanetRegular.otf", "BabyFont");
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+                fonts.AddFont("OutfitSemibold.ttf", "BoldFont");
+            });
 
 #if IOS
 		builder.UseNuke(showDebugLogs: true);
