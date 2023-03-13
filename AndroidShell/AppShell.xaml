@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AndroidShell.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AndroidShell"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar x:Name="MyTabbar" >
+
+        <ShellContent Route="MasterIndex" ContentTemplate="{DataTemplate local:NewPage1 }"
+                       Title="Start">
+       </ShellContent>
+
+        <ShellContent Route="SubIndex"  ContentTemplate="{DataTemplate local:NewPage1}"
+                       Title="Start">
+        </ShellContent>
+
+        <ShellContent Route="VideoLibrary" ContentTemplate="{DataTemplate local:NewPage2}"
+                      
+                       Title="Videos">
+        </ShellContent>
+
+        <ShellContent Route="BulletListLibrary" ContentTemplate="{DataTemplate local:NewPage3}"
+                       
+                       Title="Bullet_Lists">
+        </ShellContent>
+
+        <!--<ShellContent Route="Settings" ContentTemplate="{DataTemplate view:SettingsPage}"
+                       Icon="settings.png"
+                       Title="{Binding Source={x:Static fs_trans:SharedLibResources.Settings}, Converter={StaticResource TextCaseConverter}, ConverterParameter={x:Static toolkit:TextCaseType.Upper}}">
+        </ShellContent>-->
+
+        <!--<ShellContent Route="Transferstatus" ContentTemplate="{DataTemplate fs_view:FileTransferStatusPage}"
+                       Icon="bullet.png"
+                       Title="{Binding Source={x:Static fs_trans:SharedLibResources.Answer}, Converter={StaticResource TextCaseConverter}, ConverterParameter={x:Static toolkit:TextCaseType.Upper}}">
+        </ShellContent>-->
+    </TabBar>
+
+</Shell>
+

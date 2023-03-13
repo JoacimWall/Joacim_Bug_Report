@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    
+    Padding="0"
+    Shell.NavBarIsVisible="False"
+    Unloaded="MediaElementControl_Unloaded"
+    BackgroundColor="Black"
+    x:Class="Fm.SharedLib.Views.VideoFullPage">
+    
+    <ContentPage.Content>
+        <Grid>
+            <!--Video-->
+            <toolkit:MediaElement Margin="0" x:Name="MediaElement" MediaEnded="MediaElement_MediaEnded"
+                           ShouldKeepScreenOn="True"  ShouldShowPlaybackControls="True" ShouldAutoPlay="True"
+                />
+            
+            <!--Close View-->
+            <!--Fix for click event on Android not trigger-->
+            <!--<BoxView x:Name="BoxViewExitScreen" Margin="15,15" BackgroundColor="Transparent" WidthRequest="100" HeightRequest="100" VerticalOptions="Start" HorizontalOptions="Start">
+                 <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="VideoScreenExit"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>-->
+            <Label x:Name="VideoScreenExitCtl" Margin="15,15"   VerticalOptions="End" HorizontalOptions="Start" 
+                        
+                        FontSize="20" 
+                        Text="Back">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="VideoScreenExit"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
