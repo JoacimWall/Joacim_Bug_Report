@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary x:Class="TietoEvry.Maui.Resources.Theming.TmSharedStyle"
+                    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:tm_theming="clr-namespace:TietoEvry.Maui.Resources.Theming"
+                    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <!--  Converters  -->
+    <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+    <toolkit:SelectedItemEventArgsConverter x:Key="ItemSelectedEventArgsConverter" />
+    <toolkit:TextCaseConverter x:Key="TextCaseConverter" />
+    <!--  Local converters  -->
+    <!--<tm_converters:TmFirstValidationErrorConverter x:Key="TmFirstValidationErrorConverter" />
+    <tm_converters:TmStringToImageSourceConverter x:Key="TmStringToImageSourceConverter" />
+    <tm_converters:TmImageHeightFromDisplayWidthConverter x:Key="TmImageHeightFromDisplayWidthConverter" />-->
+     <!--  GRID STYLES  -->
+    <Style x:Key="TmPageGrid_0_0_Style" TargetType="Grid">
+        <Setter Property="RowSpacing" Value="8" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+    </Style>
+    <Style x:Key="TmPageGrid_16_0_Style" TargetType="Grid">
+        <Setter Property="RowSpacing" Value="8" />
+        <Setter Property="Margin" Value="16,0,16,0" />
+    </Style>
+    <Style x:Key="TmPageGrid_16_16_Style" TargetType="Grid">
+        <Setter Property="RowSpacing" Value="16" />
+        <Setter Property="Margin" Value="16,16,16,16" />
+    </Style>
+    <!--Fixes the orange backgrund colors on Android selected item-->
+    <Style x:Key="TmContentViewSelectedItemGray100" TargetType="ContentView">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{x:Static tm_theming:AppColors.Gray100Color}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+     <Style x:Key="TmContentViewSelectedPrimary200Color" TargetType="ContentView">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{x:Static tm_theming:AppColors.Primary200Color}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    <!--  START DEFAULT STYLES FOR TMCONTROLS  -->
+    <!--  TmControls  -->
+    <Style x:Key="TmCustomControlDefaultTitleLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="BoldFont" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.BlackColor}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="Margin" Value="1,0,0,2" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+    </Style>
+
+    <Style x:Key="TmCustomControlDefaultBorderStyle" TargetType="Border">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="1.5" />
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Gray300Color}" />
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 6,6,6,6" />
+    </Style>
+
+    <!--  TmActivitySpinner  -->
+    <Style x:Key="TmActivitySpinnerDefualtBorderStyle" TargetType="Border">
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 12,12,12,12" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="HeightRequest" Value="250" />
+        <Setter Property="WidthRequest" Value="250" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+    </Style>
+    <Style x:Key="TmActivitySpinnerDefualtActivitySpinnerStyle" TargetType="ActivityIndicator">
+        <Setter Property="HeightRequest" Value="80" />
+        <Setter Property="Margin" Value="16" />
+        <Setter Property="Color" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+    </Style>
+    <Style x:Key="TmActivitySpinnerDefualtTitleStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="NormalFont" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Margin" Value="16,0" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <!--<Setter Property="Text" Value="{x:Static tm_trans:TmResources.Please_Wait}" />-->
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+    </Style>
+    <Style x:Key="TmActivitySpinnerDefualtSubTitleStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="NormalFont" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="16,0,16,32" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+    </Style>
+    <Style x:Key="TmActivitySpinnerDefaultStyle" TargetType="tm_control:TmActivitySpinner">
+        <Setter Property="ActivityStyle" Value="{StaticResource TmActivitySpinnerDefualtActivitySpinnerStyle}" />
+        <Setter Property="BorderStyle" Value="{StaticResource TmActivitySpinnerDefualtBorderStyle}" />
+        <Setter Property="TitleStyle" Value="{StaticResource TmActivitySpinnerDefualtTitleStyle}" />
+        <Setter Property="SubTitleStyle" Value="{StaticResource TmActivitySpinnerDefualtSubTitleStyle}" />
+    </Style>
+    <!--  TmButton  -->
+    <Style x:Key="TmButtonDefaultBorderStyle" TargetType="Border">
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+    <Style x:Key="TmButtonDefaultIconLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="TmIconsFont" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="TmButtonDefaultTitleStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="BoldFont" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+    </Style>
+    <!--  TmDatePicker  -->
+    <Style x:Key="TmDatePickerDefaultIconLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="TmIconsFont" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="Text" Value="{x:Static tm_theming:TmIconFont.Calendar}" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontAutoScalingEnabled" Value="False"/>
+    </Style>
+
+    <Style x:Key="TmDatePickerDefaultDateEntryStyle" TargetType="DatePicker">
+        <Setter Property="Margin" Value="5,5,0,0" />
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="FontFamily" Value="NormalFont" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAutoScalingEnabled" Value="False"/>
+    </Style>
+
+    <Style x:Key="TmDatePickerDefaultStyle" TargetType="tm_control:TmDatePicker">
+        <Setter Property="BorderStyle" Value="{StaticResource TmCustomControlDefaultBorderStyle}" />
+        <Setter Property="TitleLabelStyle" Value="{StaticResource TmCustomControlDefaultTitleLabelStyle}" />
+        <Setter Property="IconFontStyle" Value="{StaticResource TmDatePickerDefaultIconLabelStyle}" />
+        <Setter Property="DateEntryStyle" Value="{StaticResource TmDatePickerDefaultDateEntryStyle}" />
+    </Style>
+
+    <!--  TmPicker  -->
+    <Style x:Key="TmPickerDefaultIconLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="TmIconsFont" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="Text" Value="{x:Static tm_theming:TmIconFont.Angle_down}" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+    </Style>
+
+    <Style x:Key="TmPickerDefaultPickerEntryStyle" TargetType="Picker">
+        <Setter Property="Margin" Value="5,5,0,0" />
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="FontFamily" Value="NormalFont" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+    </Style>
+
+    <Style x:Key="TmPickerDefaultStyle" TargetType="tm_control:TmPicker">
+        <Setter Property="BorderStyle" Value="{StaticResource TmCustomControlDefaultBorderStyle}" />
+        <Setter Property="TitleLabelStyle" Value="{StaticResource TmCustomControlDefaultTitleLabelStyle}" />
+        <Setter Property="IconFontStyle" Value="{StaticResource TmPickerDefaultIconLabelStyle}" />
+        <Setter Property="PickerEntryStyle" Value="{StaticResource TmPickerDefaultPickerEntryStyle}" />
+    </Style>
+
+    <!--  TmEditor  -->
+    <Style x:Key="TmEditorDefaultEditorStyle" TargetType="Editor">
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="NormalFont" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Keyboard" Value="Chat" />
+        <Setter Property="MaxLength" Value="4000" />
+        <Setter Property="PlaceholderColor" Value="{x:Static tm_theming:AppColors.Gray700Color}" />
+        <Setter Property="IsTextPredictionEnabled" Value="True" />
+        <Setter Property="FontAutoScalingEnabled" Value="False"/>
+    </Style>
+
+    <Style x:Key="TmEditorDefaultStyle" TargetType="tm_control:TmEditor">
+        <Setter Property="BorderStyle" Value="{StaticResource TmCustomControlDefaultBorderStyle}" />
+        <Setter Property="TitleLabelStyle" Value="{StaticResource TmCustomControlDefaultTitleLabelStyle}" />
+        <Setter Property="EntryStyle" Value="{StaticResource TmEditorDefaultEditorStyle}" />
+    </Style>
+    <!--  TmEntry  -->
+    <Style x:Key="TmEntryDefaultEntryStyle" TargetType="Entry">
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="NormalFont" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="PlaceholderColor" Value="{x:Static tm_theming:AppColors.Gray700Color}" />
+        <Setter Property="IsTextPredictionEnabled" Value="True" />
+        <Setter Property="FontAutoScalingEnabled" Value="False"/>
+    </Style>
+    <Style x:Key="TmEntryDefaultStyle" TargetType="tm_control:TmEntry">
+        <Setter Property="BorderStyle" Value="{StaticResource TmCustomControlDefaultBorderStyle}" />
+        <Setter Property="TitleLabelStyle" Value="{StaticResource TmCustomControlDefaultTitleLabelStyle}" />
+        <Setter Property="EntryStyle" Value="{StaticResource TmEntryDefaultEntryStyle}" />
+    </Style>
+    <!--  TmProfileImageView  -->
+    <Style x:Key="TmProfileImageDefaultIconFontBkgEllipseStyle" TargetType="Ellipse">
+        <Setter Property="Fill" Value="{x:Static tm_theming:AppColors.Primary100Brush}" />
+        <Setter Property="StrokeThickness" Value="0.06" />
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Primary200Color}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+    <Style x:Key="TmProfileImageDefaultIconLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="TmIconsFont" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="Text" Value="{x:Static tm_theming:TmIconFont.Avatar_user}" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+    </Style>
+
+    <Style x:Key="TmProfileImageDefaultStyle" TargetType="tm_control:TmProfileImageView">
+        <Setter Property="DefaultIconFontBkgEllipse" Value="{StaticResource TmProfileImageDefaultIconFontBkgEllipseStyle}" />
+        <Setter Property="DefaultIconFontStyle" Value="{StaticResource TmProfileImageDefaultIconLabelStyle}" />
+    </Style>
+     <!--TmTitleView-->
+    <Style x:Key="TmTitleViewLabelStyleIconForBackButton" TargetType="Label">
+        <Setter Property="FontFamily" Value="TmIconsFont" />
+        <Setter Property="Text" Value="{x:Static tm_theming:TmIconFont.Angle_left}" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+        <Setter Property="FontSize" Value="17" />
+    </Style>
+
+    <Style x:Key="TmTitleViewTitleTextStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="BoldFont" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="Margin" Value="12,8" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+    </Style>
+
+    <Style x:Key="TmTitleViewIconFontStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="TmIconsFont" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+
+    </Style>
+
+    <Style x:Key="TmTitleViewActionLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="BoldFont" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="Margin" Value="12,8" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+    </Style>
+
+    <Style x:Key="TmTitleViewNotificationLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="BoldFont" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+
+    </Style>
+
+    <Style x:Key="TmTitleViewNotificationFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.SignalRedColor}" />
+        <Setter Property="VerticalOptions" Value="Start" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="WidthRequest" Value="16" />
+        <Setter Property="HeightRequest" Value="16" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="0" />
+
+    </Style>
+
+    <Style x:Key="TmTitleViewDefaultStyle" TargetType="tm_control:TmTitleView">
+        <Setter Property="TitleStyle" Value="{StaticResource TmTitleViewTitleTextStyle}" />
+        <Setter Property="BackbuttonIconFontStyle" Value="{StaticResource TmTitleViewLabelStyleIconForBackButton}" />
+        <Setter Property="ActionLeftIconFontStyle" Value="{StaticResource TmTitleViewIconFontStyle}" />
+        <Setter Property="ActionLeftLabelStyle" Value="{StaticResource TmTitleViewActionLabelStyle}" />
+        <Setter Property="ActionRightIconFontStyle" Value="{StaticResource TmTitleViewIconFontStyle}" />
+        <Setter Property="ActionRightLabelStyle" Value="{StaticResource TmTitleViewActionLabelStyle}" />
+        <Setter Property="ActionRightTwoIconFontStyle" Value="{StaticResource TmTitleViewIconFontStyle}" />
+        <Setter Property="ActionRightTwoLabelStyle" Value="{StaticResource TmTitleViewActionLabelStyle}" />
+        <Setter Property="NotificationCountFrameStyle" Value="{StaticResource TmTitleViewNotificationFrameStyle}" />
+        <Setter Property="NotificationCountLabelStyle" Value="{StaticResource TmTitleViewNotificationLabelStyle}" />
+    </Style>
+
+   
+
+
+    <!--  END DEFAULT STYLES FOR TMCONTROLS  -->
+
+
+    <Style x:Key="TmCustomControlGrid" TargetType="Grid">
+        <Setter Property="Margin" Value="6,0,6,0" />
+        <Setter Property="RowSpacing" Value="0" />
+        <Setter Property="ColumnSpacing" Value="0" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <!--  LABEL STYLES  -->
+    <!--  Base for all label styles for Text  -->
+    <Style x:Key="TmLabelStyleNormalBase" TargetType="Label">
+        <Setter Property="FontFamily" Value="NormalFont" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="Margin" Value="16,8,16,0" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+    </Style>
+    <!--  __________ Normal________________________  -->
+    <!--  Large  -->
+    <Style x:Key="TmLabelStyleNormalMedium"
+           BasedOn="{StaticResource TmLabelStyleNormalBase}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+    <!--  Medium  -->
+    <Style x:Key="TmLabelStyleNormalLarge"
+           BasedOn="{StaticResource TmLabelStyleNormalBase}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+
+    <!--  Small  -->
+    <Style x:Key="TmLabelStyleNormalSmall"
+           BasedOn="{StaticResource TmLabelStyleNormalBase}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <!--  Micro  -->
+    <Style x:Key="TmLabelStyleNormalMicro"
+           BasedOn="{StaticResource TmLabelStyleNormalBase}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="11" />
+    </Style>
+    <Style x:Key="TmLabelStyleNormalMicroRed500"
+           BasedOn="{StaticResource TmLabelStyleNormalMicro}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Red500Color}" />
+    </Style>
+    <Style x:Key="TmLabelStyleNormalMicroGray700"
+           BasedOn="{StaticResource TmLabelStyleNormalMicro}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray700Color}" />
+    </Style>
+
+    <!--  __________ Bold ________________________  -->
+    <Style x:Key="TmLabelBoldBaseStyle"
+           BasedOn="{StaticResource TmLabelStyleNormalBase}"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="BoldFont" />
+    </Style>
+    <Style x:Key="TmLabelStyleBoldMicro"
+           BasedOn="{StaticResource TmLabelBoldBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="11" />
+    </Style>
+    <!--  _______________ Base for all Icon label styles _________________________________  -->
+    <!--  TmIconFont  -->
+    <Style x:Key="TmLabelIconBaseStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="TmIconsFont" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+    </Style>
+
+
+    <Style x:Key="TmLabelStyleIconFontMicro"
+           BasedOn="{StaticResource TmLabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="11" />
+    </Style>
+    <Style x:Key="TmLabelStyleIconFontMicroPrimary500"
+           BasedOn="{StaticResource TmLabelStyleIconFontMicro}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="TmLabelStyleIconFontSmall"
+           BasedOn="{StaticResource TmLabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style x:Key="TmLabelStyleIconFontSmallWhite"
+           BasedOn="{StaticResource TmLabelStyleIconFontSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="TmLabelStyleIconFontSmallPrimary500"
+           BasedOn="{StaticResource TmLabelStyleIconFontSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="TmLabelStyleIconFontMedium"
+           BasedOn="{StaticResource TmLabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="20" />
+    </Style>
+    <Style x:Key="TmLabelStyleIconFontMediumWhite"
+           BasedOn="{StaticResource TmLabelStyleIconFontMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="TmLabelStyleIconFontMediumPrimary400"
+           BasedOn="{StaticResource TmLabelStyleIconFontMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary400Color}" />
+    </Style>
+    <Style x:Key="TmLabelStyleIconFontMediumRed500"
+           BasedOn="{StaticResource TmLabelStyleIconFontMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.SignalRedColor}" />
+    </Style>
+    <Style x:Key="TmLabelStyleIconFontMediumSuccess"
+           BasedOn="{StaticResource TmLabelStyleIconFontMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.SuccessColor}" />
+    </Style>
+    <Style x:Key="TmLabelStyleIconFontLarge"
+           BasedOn="{StaticResource TmLabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+    <Style x:Key="TmLabelStyleIconFontXXLarge"
+           BasedOn="{StaticResource TmLabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="40" />
+    </Style>
+
+
+
+
+    <!--  _____________________________ TMT Control STYELS ___________________________________________________  -->
+
+
+ 
+    
+    <!--  Styles used by the TmProgressBar Control  -->
+    <Style x:Key="TmProgressBarStyle" TargetType="tm_control:TmProgressBar">
+        <Setter Property="AlternativeTextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="BarBackgroundColor" Value="{x:Static tm_theming:AppColors.Primary200Color}" />
+        <Setter Property="GradientEndColor" Value="{x:Static tm_theming:AppColors.Primary800Color}" />
+        <Setter Property="GradientStartColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="HeightRequest" Value="10" />
+        <Setter Property="CornerRadius" Value="6" />
+    </Style>
+
+    <!--  Styles used by the TmSpinner Control  -->
+    <Style x:Key="TmSpinnerBorderStyle" TargetType="Border">
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 12,12,12,12" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="HeightRequest" Value="250" />
+        <Setter Property="WidthRequest" Value="250" />
+    </Style>
+
+    <Style x:Key="TmSpinnerActivityIndicatorStyle" TargetType="ActivityIndicator">
+        <Setter Property="HeightRequest" Value="80" />
+        <Setter Property="Margin" Value="16" />
+        <Setter Property="Color" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+    </Style>
+
+    <Style x:Key="TmSpinnerTitleStyle"
+           BasedOn="{StaticResource TmLabelStyleNormalMedium}"
+           TargetType="Label">
+        <Setter Property="Margin" Value="16,0" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="Text" Value="{x:Static tm_trans:TmResources.Please_Wait}" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+    </Style>
+
+    <Style x:Key="TmSpinnerSubTitleStyle"
+           BasedOn="{StaticResource TmLabelStyleNormalSmall}"
+           TargetType="Label">
+        <Setter Property="Margin" Value="16,0,16,32" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="Text" Value="{x:Static tm_trans:TmResources.Please_Wait}" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+    </Style>
+    <!--  Styles used by the ForceUpdateAppPromptView View  -->
+    <Style x:Key="ForceUpdateAppViewAppTitleStyle"
+           BasedOn="{StaticResource TmLabelStyleNormalLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="ForceUpdateAppViewTitleStyle"
+           BasedOn="{StaticResource TmLabelStyleNormalMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+    </Style>
+
+    <Style x:Key="ForceUpdateAppViewSubTitleStyle"
+           BasedOn="{StaticResource TmLabelStyleNormalSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+    </Style>
+    <Style x:Key="ForceUpdateAppPageStyle" TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+
+    <!--  Styles used by the BackendServicePromptView View  -->
+    <Style x:Key="BackendServiceViewAppTitleStyle"
+           BasedOn="{StaticResource TmLabelStyleNormalLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="BackendServiceViewTitleStyle"
+           BasedOn="{StaticResource TmLabelStyleNormalMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+
+    <Style x:Key="BackendServiceViewSubTitleStyle"
+           BasedOn="{StaticResource TmLabelStyleNormalSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+</ResourceDictionary>

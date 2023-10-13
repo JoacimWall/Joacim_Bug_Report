@@ -1,0 +1,986 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary x:Class="LiberoClub.Resources.Theming.SharedStyle"
+                    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:theming="clr-namespace:LiberoClub.Resources.Theming"
+                    
+                    xmlns:tm_theming="clr-namespace:TietoEvry.Maui.Resources.Theming"
+                    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    <ResourceDictionary.MergedDictionaries>
+        <tm_theming:TmSharedStyle />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  Margins  -->
+
+    <OnPlatform x:Key="StoryViewCellMargin" x:TypeArguments="Thickness">
+        <On Platform="iOS" Value="0,4,0,6" />
+        <On Platform="Android" Value="0,4,0,6" />
+    </OnPlatform>
+
+    <!--  ActivityIndicator  -->
+    <Style TargetType="ActivityIndicator">
+        <Setter Property="WidthRequest" Value="100" />
+        <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="Color" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="IsRunning" Value="{Binding IsLoading}" />
+        <Setter Property="IsVisible" Value="{Binding IsLoading}" />
+    </Style>
+
+    <!--  _____________________________ LABEL STYELS ___________________________________________________  -->
+    <!--
+        Sizes
+        Micro=11
+        Small=14
+        Medium=17
+        XMedium=20
+        Large=24
+        Xlarge=32
+        XXLarge=40
+        XXXLarge=58
+    -->
+    <!--  LABEL STYLES  -->
+    <!--  Base for all label styles  -->
+    <Style x:Key="LabelBaseStyle" TargetType="Label">
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="Padding" Value="0,2,0,0" />
+        <Setter Property="FontAutoScalingEnabled" Value="False"/> 
+    </Style>
+
+    <!--  BoldFont  -->
+    <Style x:Key="LabelBoldBaseStyle"
+           BasedOn="{StaticResource LabelBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="BoldFont" />
+    </Style>
+
+
+    <Style x:Key="LabelStyleBoldMicro"
+           BasedOn="{StaticResource LabelBoldBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="11" />
+    </Style>
+    <Style x:Key="LabelStyleBoldMicroGray700"
+           BasedOn="{StaticResource LabelStyleBoldMicro}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray700Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldMicroWhite"
+           BasedOn="{StaticResource LabelStyleBoldMicro}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+
+    <Style x:Key="LabelStyleBoldSmall"
+           BasedOn="{StaticResource LabelBoldBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style x:Key="LabelStyleBoldSmallBlack"
+           BasedOn="{StaticResource LabelStyleBoldSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.BlackColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldSmallWhite"
+           BasedOn="{StaticResource LabelStyleBoldSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldSmallGray900"
+           BasedOn="{StaticResource LabelStyleBoldSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldSmallGray700"
+           BasedOn="{StaticResource LabelStyleBoldSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray700Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldSmallGray400"
+           BasedOn="{StaticResource LabelStyleBoldSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray400Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldSmalPrimary500"
+           BasedOn="{StaticResource LabelStyleBoldSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+
+    <Style x:Key="LabelStyleBoldSmallPrimary500"
+           BasedOn="{StaticResource LabelStyleBoldSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldMedium"
+           BasedOn="{StaticResource LabelBoldBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="17" />
+    </Style>
+    <Style x:Key="LabelStyleBoldMediumWhite"
+           BasedOn="{StaticResource LabelStyleBoldMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldMediumBlack"
+           BasedOn="{StaticResource LabelStyleBoldMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.BlackColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldMediumPrimary500"
+           BasedOn="{StaticResource LabelStyleBoldMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldMediumPrimary400"
+           BasedOn="{StaticResource LabelStyleBoldMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary400Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldMediumGray700"
+           BasedOn="{StaticResource LabelStyleBoldMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray700Color}" />
+    </Style>
+
+    <Style x:Key="LabelStyleBoldXMedium"
+           BasedOn="{StaticResource LabelBoldBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="20" />
+    </Style>
+    <Style x:Key="LabelStyleBoldXMediumPrimary500"
+           BasedOn="{StaticResource LabelStyleBoldXMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldXMediumBlack"
+           BasedOn="{StaticResource LabelStyleBoldXMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.BlackColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldLarge"
+           BasedOn="{StaticResource LabelBoldBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+    <Style x:Key="LabelStyleBoldLargeGray400"
+           BasedOn="{StaticResource LabelStyleBoldLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray400Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldLargeGray900"
+           BasedOn="{StaticResource LabelStyleBoldLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldLargeWhite"
+           BasedOn="{StaticResource LabelStyleBoldLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldLargePrimary500"
+           BasedOn="{StaticResource LabelStyleBoldLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldXLarge"
+           BasedOn="{StaticResource LabelBoldBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="32" />
+    </Style>
+    <Style x:Key="LabelStyleBoldXLargeWhite"
+           BasedOn="{StaticResource LabelStyleBoldXLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldXLargeGray900"
+           BasedOn="{StaticResource LabelStyleBoldXLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBoldXLargeBlack"
+           BasedOn="{StaticResource LabelStyleBoldXLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.BlackColor}" />
+    </Style>
+
+    <!--  NormalFont  -->
+    <Style x:Key="LabelNormalBaseStyle"
+           BasedOn="{StaticResource LabelBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="NormalFont" />
+    </Style>
+
+    <Style x:Key="LabelStyleNormalMicro"
+           BasedOn="{StaticResource LabelNormalBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="11" />
+    </Style>
+    <Style x:Key="LabelStyleNormalMicroGray700"
+           BasedOn="{StaticResource LabelStyleNormalMicro}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray700Color}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalMicroRed500"
+           BasedOn="{StaticResource LabelStyleNormalMicro}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.SignalRedColor}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalMicroWhite"
+           BasedOn="{StaticResource LabelStyleNormalMicro}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+
+    <Style x:Key="LabelStyleNormalSmall"
+           BasedOn="{StaticResource LabelNormalBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style x:Key="LabelStyleNormalSmallRed500"
+           BasedOn="{StaticResource LabelStyleNormalSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.SignalRedColor}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalSmallWhite"
+           BasedOn="{StaticResource LabelStyleNormalSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalSmallBlack"
+           BasedOn="{StaticResource LabelStyleNormalSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.BlackColor}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalSmallGray400"
+           BasedOn="{StaticResource LabelStyleNormalSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray400Color}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalSmallGray700"
+           BasedOn="{StaticResource LabelStyleNormalSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray700Color}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalSmallPrimary400"
+           BasedOn="{StaticResource LabelStyleNormalSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary400Color}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalSmallPrimary500"
+           BasedOn="{StaticResource LabelStyleNormalSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalSmallPrimary800"
+           BasedOn="{StaticResource LabelStyleNormalSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary800Color}" />
+    </Style>
+
+    <Style x:Key="LabelStyleNormalMedium"
+           BasedOn="{StaticResource LabelNormalBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="17" />
+    </Style>
+    <Style x:Key="LabelStyleNormalMediumBlack"
+           BasedOn="{StaticResource LabelStyleNormalMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.BlackColor}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalMediumGray900"
+           BasedOn="{StaticResource LabelStyleNormalMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalMediumWhite"
+           BasedOn="{StaticResource LabelStyleNormalMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalMediumPrimary500"
+           BasedOn="{StaticResource LabelStyleNormalMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalMediumRed500"
+           BasedOn="{StaticResource LabelStyleNormalMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.SignalRedColor}" />
+    </Style>
+    <Style x:Key="LabelStyleNormalLarge"
+           BasedOn="{StaticResource LabelNormalBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+    <Style x:Key="LabelStyleNormalLargeWhite"
+           BasedOn="{StaticResource LabelStyleNormalLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleXLarge"
+           BasedOn="{StaticResource LabelNormalBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="32" />
+    </Style>
+
+    <!--  BabyFont  -->
+    <Style x:Key="LabelBabyBaseStyle"
+           BasedOn="{StaticResource LabelBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="BabyFont" />
+    </Style>
+
+    <Style x:Key="LabelStyleBabySmall"
+           BasedOn="{StaticResource LabelBabyBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style x:Key="LabelStyleBabySmallPrimary500"
+           BasedOn="{StaticResource LabelStyleBabySmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBabySmallWhite"
+           BasedOn="{StaticResource LabelStyleBabySmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBabyMedium"
+           BasedOn="{StaticResource LabelBabyBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="Padding" Value="0,3,0,0" />
+    </Style>
+    <Style x:Key="LabelStyleBabyMediumPrimary500"
+           BasedOn="{StaticResource LabelStyleBabyMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBabyMediumWhite"
+           BasedOn="{StaticResource LabelStyleBabyMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBabyLarge"
+           BasedOn="{StaticResource LabelBabyBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="Padding" Value="0,4,0,0" />
+    </Style>
+    <Style x:Key="LabelStyleBabyLargePrimary500"
+           BasedOn="{StaticResource LabelStyleBabyLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBabyLargeWhite"
+           BasedOn="{StaticResource LabelStyleBabyLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBabyLargeBlack"
+           BasedOn="{StaticResource LabelStyleBabyLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.BlackColor}" />
+    </Style>
+
+    <Style x:Key="LabelStyleBabyXLarge"
+           BasedOn="{StaticResource LabelBabyBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="32" />
+        <Setter Property="Padding" Value="0,5,0,0" />
+    </Style>
+    <Style x:Key="LabelStyleBabyXLargePrimary500"
+           BasedOn="{StaticResource LabelStyleBabyXLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleBabyXLargeWhite"
+           BasedOn="{StaticResource LabelStyleBabyXLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBabyXXLarge"
+           BasedOn="{StaticResource LabelBabyBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="40" />
+        <Setter Property="Padding" Value="0,6,0,0" />
+    </Style>
+    <Style x:Key="LabelStyleBabyXXLargeWhite"
+           BasedOn="{StaticResource LabelStyleBabyXXLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleBabyXXXLarge"
+           BasedOn="{StaticResource LabelBabyBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="58" />
+        <Setter Property="Padding" Value="0,9,0,0" />
+    </Style>
+    <Style x:Key="LabelStyleBabyXXXLargeWhite"
+           BasedOn="{StaticResource LabelStyleBabyXXXLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <!--  LiberoIconFont  -->
+    <Style x:Key="LabelIconBaseStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="LiberoIconsFont" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="FontAutoScalingEnabled" Value="False"/>
+    </Style>
+
+    <Style x:Key="LabelStyleIconFontMicro"
+           BasedOn="{StaticResource LabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="11" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontMicroPrimary500"
+           BasedOn="{StaticResource LabelStyleIconFontMicro}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontSmall"
+           BasedOn="{StaticResource LabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontSmallWhite"
+           BasedOn="{StaticResource LabelStyleIconFontSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontSmallPrimary500"
+           BasedOn="{StaticResource LabelStyleIconFontSmall}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+
+    <Style x:Key="LabelStyleIconFontMedium"
+           BasedOn="{StaticResource LabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="20" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontMediumWhite"
+           BasedOn="{StaticResource LabelStyleIconFontMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontMediumPrimary400"
+           BasedOn="{StaticResource LabelStyleIconFontMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary400Color}" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontMediumPrimary500"
+           BasedOn="{StaticResource LabelStyleIconFontMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontMediumGray900"
+           BasedOn="{StaticResource LabelStyleIconFontMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontMediumRed500"
+           BasedOn="{StaticResource LabelStyleIconFontMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.SignalRedColor}" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontMediumSuccess"
+           BasedOn="{StaticResource LabelStyleIconFontMedium}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.SuccessColor}" />
+    </Style>
+
+    <Style x:Key="LabelStyleIconFontLarge"
+           BasedOn="{StaticResource LabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontLargeWhite"
+           BasedOn="{StaticResource LabelStyleIconFontLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontLargeSuccess"
+           BasedOn="{StaticResource LabelStyleIconFontLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.SuccessColor}" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontXLarge"
+           BasedOn="{StaticResource LabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="32" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontXXLarge"
+           BasedOn="{StaticResource LabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="40" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontXXLargeWhite"
+           BasedOn="{StaticResource LabelStyleIconFontXXLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontXXXLarge"
+           BasedOn="{StaticResource LabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="50" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontXXXLargeWhite"
+           BasedOn="{StaticResource LabelStyleIconFontXXLarge}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontXXXXLarge"
+           BasedOn="{StaticResource LabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="80" />
+    </Style>
+    <Style x:Key="LabelStyleIconFontXXXXXLarge"
+           BasedOn="{StaticResource LabelIconBaseStyle}"
+           TargetType="Label">
+        <Setter Property="FontSize" Value="130" />
+    </Style>
+
+    <!--  SPAN STYLES  -->
+    <!--  Base for all span styles  -->
+    <Style x:Key="SpanBaseStyle" TargetType="Span">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+    </Style>
+
+
+    <!--  NormalFont  -->
+    <Style x:Key="SpanNormalBaseStyle"
+           BasedOn="{StaticResource SpanBaseStyle}"
+           TargetType="Span">
+        <Setter Property="FontFamily" Value="NormalFont" />
+    </Style>
+    <Style x:Key="SpanStyleNormalSmall"
+           BasedOn="{StaticResource SpanNormalBaseStyle}"
+           TargetType="Span">
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+
+    <Style x:Key="SpanBoldBaseStyle"
+           BasedOn="{StaticResource SpanBaseStyle}"
+           TargetType="Span">
+        <Setter Property="FontFamily" Value="BoldFont" />
+    </Style>
+    <Style x:Key="SpanStyleBoldMedium"
+           BasedOn="{StaticResource SpanBoldBaseStyle}"
+           TargetType="Span">
+        <Setter Property="FontSize" Value="17" />
+    </Style>
+
+
+    <!--  _____________________________ BORDER STYELS ___________________________________________________  -->
+    <Style x:Key="StandardBorderStyle" TargetType="Border">
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Gray100Color}" />
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 12,12,12,12" />
+    </Style>
+    <!--  _____________________________ FRAME STYELS ___________________________________________________  -->
+    <Style x:Key="StandardFrameStyle" TargetType="Frame">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderColor" Value="{x:Static tm_theming:AppColors.Gray100Color}" />
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="IsClippedToBounds">
+            <OnPlatform x:TypeArguments="x:Boolean">
+                <On Platform="iOS" Value="False" />
+                <On Platform="Android" Value="True" />
+            </OnPlatform>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="NoShadowFrameStyle" TargetType="Frame">
+        <Setter Property="Margin" Value="15" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="15" />
+        <Setter Property="BorderColor" Value="{x:Static tm_theming:AppColors.Primary200Color}" />
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="CornerRadius" Value="10" />
+    </Style>
+
+    <Style x:Key="LiberoCustomControlFrame" TargetType="Frame">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="Padding" Value="1.5" />
+        <Setter Property="BorderColor" Value="{x:Static tm_theming:AppColors.Gray300Color}" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+
+    </Style>
+
+    
+
+    <!--  _____________________________ IMAGE STYELS ___________________________________________________  -->
+
+    <!--<Style  x:Key="ProfileImageStyle" TargetType="tm_control:TmProfileImageView">
+                <Setter Property="InputTransparent" Value="True" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="ImageSize" Value="50" />
+            </Style>-->
+
+
+    <!--  _____________________________ PAGE STYELS ___________________________________________________  -->
+    <!--  ListView  -->
+    <Style ApplyToDerivedTypes="True" TargetType="ListView">
+        <Setter Property="RefreshControlColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+
+    <!--  RefreshView  -->
+    <Style ApplyToDerivedTypes="True" TargetType="RefreshView">
+        <Setter Property="RefreshColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+    <!--  ContentPage  -->
+    <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="Padding" Value="{OnPlatform iOS='0,0,0,0', Android='0,0,0,0'}" />
+
+
+    </Style>
+    <!--  NavigationPage  -->
+    <Style ApplyToDerivedTypes="True" TargetType="NavigationPage">
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="BarTextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="BarBackgroundColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <!--<Setter Property="ios:NavigationPage.HideNavigationBarSeparator" Value="True"/>-->
+    </Style>
+
+   
+    <!--  _____________________________ BUTTON STYELS ___________________________________________________  -->
+
+
+    <!--  ______________  TmButton __________________________________  -->
+    <Style x:Key="LabelBoldButtonBaseStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="FontFamily" Value="BoldFont" />
+        <Setter Property="FontAutoScalingEnabled" Value="False" />
+    </Style>
+
+    <Style x:Key="LabelButtonStyleMediumWhite"
+           BasedOn="{StaticResource LabelBoldButtonBaseStyle}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="FontSize" Value="17" />
+    </Style>
+    <Style x:Key="LabelButtonStyleMediumPrimary500"
+           BasedOn="{StaticResource LabelBoldButtonBaseStyle}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="FontSize" Value="17" />
+    </Style>
+    <Style x:Key="LabelButtonStyleSmallPrimary500"
+           BasedOn="{StaticResource LabelBoldButtonBaseStyle}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style x:Key="LabelButtonStyleSmallWhite"
+           BasedOn="{StaticResource LabelBoldButtonBaseStyle}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style x:Key="LabelButtonStyleMicroPrimary500"
+           BasedOn="{StaticResource LabelBoldButtonBaseStyle}"
+           TargetType="Label">
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="FontSize" Value="11" />
+    </Style>
+
+    <Style x:Key="FrameButonBaseStyle" TargetType="Border">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="Padding" Value="1,1,1,1" />
+    </Style>
+
+
+    <!--  ########## LARGE BUTTON ##########  -->
+    <Style x:Key="BorderButtonStyleLargePrimary"
+           BasedOn="{StaticResource FrameButonBaseStyle}"
+           TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="StrokeShape" Value="RoundRectangle 60,60,60,60" />
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="BorderButtonStyleLargeSecondary"
+           BasedOn="{StaticResource FrameButonBaseStyle}"
+           TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.Primary400Color}" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="StrokeShape" Value="RoundRectangle 60,60,60,60" />
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+
+    <Style x:Key="BorderButtonStyleLargePrimaryTransparent"
+           BasedOn="{StaticResource FrameButonBaseStyle}"
+           TargetType="Border">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="StrokeShape" Value="RoundRectangle 60,60,60,60" />
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+
+    <!--  ########## SMALL BUTTON ##########  -->
+    <Style x:Key="BorderButtonStyleSmallPrimary"
+           BasedOn="{StaticResource FrameButonBaseStyle}"
+           TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 60,60,60,60" />
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="BorderButtonStyleSmallSecondary"
+           BasedOn="{StaticResource FrameButonBaseStyle}"
+           TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.Primary400Color}" />
+        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 60,60,60,60" />
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="BorderButtonStyleSmallPrimaryTransparent"
+           BasedOn="{StaticResource FrameButonBaseStyle}"
+           TargetType="Border">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 60,60,60,60" />
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <!--  ########## LARGE BUTTON ##########  -->
+    <Style x:Key="ButtonStyleLargePrimary" TargetType="tm_control:TmButton">
+        <Setter Property="BorderStyle" Value="{StaticResource BorderButtonStyleLargePrimary}" />
+        <Setter Property="TitleStyle" Value="{StaticResource LabelButtonStyleMediumWhite}" />
+        <Setter Property="IconFontStyle" Value="{StaticResource LabelStyleIconFontMediumWhite}" />
+    </Style>
+
+    <Style x:Key="ButtonStyleLargeSecondary" TargetType="tm_control:TmButton">
+        <Setter Property="BorderStyle" Value="{StaticResource BorderButtonStyleLargeSecondary}" />
+        <Setter Property="TitleStyle" Value="{StaticResource LabelButtonStyleMediumWhite}" />
+        <Setter Property="IconFontStyle" Value="{StaticResource LabelStyleIconFontMediumWhite}" />
+    </Style>
+
+    <Style x:Key="ButtonStyleLargePrimaryTransparent" TargetType="tm_control:TmButton">
+        <Setter Property="BorderStyle" Value="{StaticResource BorderButtonStyleLargePrimaryTransparent}" />
+        <Setter Property="TitleStyle" Value="{StaticResource LabelButtonStyleMediumPrimary500}" />
+        <Setter Property="IconFontStyle" Value="{StaticResource LabelStyleIconFontMedium}" />
+    </Style>
+
+    <!--  ########## SMALL BUTTON ##########  -->
+    <Style x:Key="ButtonStyleSmallPrimary" TargetType="tm_control:TmButton">
+        <Setter Property="BorderStyle" Value="{StaticResource BorderButtonStyleSmallPrimary}" />
+        <Setter Property="TitleStyle" Value="{StaticResource LabelButtonStyleSmallWhite}" />
+        <Setter Property="IconFontStyle" Value="{StaticResource LabelStyleIconFontSmallWhite}" />
+        
+    </Style>
+
+    <Style x:Key="ButtonStyleSmallSecondary" TargetType="tm_control:TmButton">
+        <Setter Property="BorderStyle" Value="{StaticResource BorderButtonStyleSmallSecondary}" />
+        <Setter Property="TitleStyle" Value="{StaticResource LabelButtonStyleSmallWhite}" />
+        <Setter Property="IconFontStyle" Value="{StaticResource LabelStyleIconFontSmallWhite}" />
+    </Style>
+
+    <Style x:Key="ButtonStyleSmallPrimaryTransparent" TargetType="tm_control:TmButton">
+        <Setter Property="BorderStyle" Value="{StaticResource BorderButtonStyleSmallPrimaryTransparent}" />
+        <Setter Property="TitleStyle" Value="{StaticResource LabelButtonStyleSmallPrimary500}" />
+        <Setter Property="IconFontStyle" Value="{StaticResource LabelStyleIconFontSmallWhite}" />
+    </Style>
+
+     <Style x:Key="StoryPostEditorDefaultEditorStyle" TargetType="Editor">
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="NormalFont" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Keyboard" Value="Chat" />
+        <Setter Property="MaxLength" Value="4000" />
+        <Setter Property="PlaceholderColor" Value="{x:Static tm_theming:AppColors.Gray700Color}" />
+        <Setter Property="IsTextPredictionEnabled" Value="True" />
+    </Style>
+
+        <Style x:Key="StoryPostEditorBorderStyle" TargetType="Border">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="1.5" />
+        <Setter Property="Stroke" Value="{x:Static tm_theming:AppColors.TransparentColor}" />
+        <Setter Property="BackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 6,6,6,6" />
+    </Style>
+
+     <!--  ########## TM Editor ##########  -->
+     <Style x:Key="StoryPostEditorDefaultStyle" TargetType="tm_control:TmEditor">
+        <Setter Property="BorderStyle" Value="{StaticResource StoryPostEditorBorderStyle}" />
+        <Setter Property="TitleLabelStyle" Value="{StaticResource TmCustomControlDefaultTitleLabelStyle}" />
+        <Setter Property="EntryStyle" Value="{StaticResource StoryPostEditorDefaultEditorStyle}" />
+    </Style>
+
+
+
+
+    <!--  Radio button  style  -->
+    <ControlTemplate x:Key="RadioButtonTemplate">
+        <Frame Padding="0"
+               BackgroundColor="Transparent"
+               HasShadow="False"
+               HorizontalOptions="Start"
+               VerticalOptions="Center">
+            <Grid Margin="4">
+                <Grid HeightRequest="25"
+                      HorizontalOptions="Start"
+                      VerticalOptions="Center"
+                      WidthRequest="25">
+                    <Ellipse Fill="{x:Static tm_theming:AppColors.WhiteBrush}"
+                             HeightRequest="24"
+                             HorizontalOptions="Center"
+                             Stroke="{x:Static tm_theming:AppColors.Primary500Color}"
+                             StrokeThickness="2"
+                             VerticalOptions="Center"
+                             WidthRequest="24" />
+                    <Ellipse x:Name="check"
+                             Fill="{x:Static tm_theming:AppColors.Primary500Color}"
+                             HeightRequest="16"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             WidthRequest="16" />
+                </Grid>
+                <ContentPresenter />
+            </Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CheckedStates">
+                        <VisualState x:Name="Checked">
+                            <VisualState.Setters>
+                                <Setter TargetName="check" Property="Opacity" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Unchecked">
+                            <VisualState.Setters>
+                                <Setter TargetName="check" Property="Opacity" Value="0" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </VisualStateManager.VisualStateGroups>
+        </Frame>
+
+    </ControlTemplate>
+
+
+    <Style x:Key="RadiobuttonBarBaseStyle" TargetType="RadioButton">
+        <Setter Property="FontFamily" Value="NormalFont" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.Gray900Color}" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="ControlTemplate" Value="{StaticResource RadioButtonTemplate}" />
+    </Style>
+
+    <!--  _____________________________ TmFontIcon STYELS ___________________________________________________  -->
+
+    <!--  ########## LARGE ##########  -->
+    <Style x:Key="FontIconStyleLargePrimary" TargetType="tm_control:TmFontIcon">
+        <Setter Property="BackgroundIconStyle" Value="{StaticResource LabelStyleIconFontXXLarge}" />
+        <Setter Property="ForegroundIconStyle" Value="{StaticResource LabelStyleIconFontLargeWhite}" />
+    </Style>
+
+    <Style x:Key="FontIconStyleLargeSecondary" TargetType="tm_control:TmFontIcon">
+        <Setter Property="BackgroundIconStyle" Value="{StaticResource LabelStyleIconFontXXLargeWhite}" />
+        <Setter Property="ForegroundIconStyle" Value="{StaticResource LabelStyleIconFontLarge}" />
+    </Style>
+    <!--TmTitleView-->
+     <Style x:Key="TitleViewIconFontStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="LiberoIconsFont" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="FontAutoScalingEnabled" Value="False"/>
+
+    </Style>
+    <Style x:Key="TitleViewDefaultStyle" TargetType="tm_control:TmTitleView">
+        <Setter Property="TitleStyle" Value="{StaticResource TmTitleViewTitleTextStyle}"/>
+        <Setter Property="BackbuttonIconFontStyle" Value="{StaticResource TmTitleViewLabelStyleIconForBackButton}"/>
+        <Setter Property="ActionLeftIconFontStyle" Value="{StaticResource TitleViewIconFontStyle}" />
+        <Setter Property="ActionLeftLabelStyle" Value="{StaticResource TmTitleViewActionLabelStyle}" />
+        <Setter Property="ActionRightIconFontStyle" Value="{StaticResource TitleViewIconFontStyle}" />
+        <Setter Property="ActionRightLabelStyle" Value="{StaticResource TmTitleViewActionLabelStyle}" />
+        <Setter Property="ActionRightTwoIconFontStyle" Value="{StaticResource TitleViewIconFontStyle}" />
+        <Setter Property="ActionRightTwoLabelStyle" Value="{StaticResource TmTitleViewActionLabelStyle}" />
+        <Setter Property="NotificationCountFrameStyle" Value="{StaticResource TmTitleViewNotificationFrameStyle}" />
+        <Setter Property="NotificationCountLabelStyle" Value="{StaticResource TmTitleViewNotificationLabelStyle}" />
+    </Style>
+
+    <!--  Progressbar  style  -->
+    <Style x:Key="GradientProgressBarBaseStyle" TargetType="tm_control:TmProgressBar">
+        <Setter Property="AlternativeTextColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="BarBackgroundColor" Value="{x:Static tm_theming:AppColors.Primary200Color}" />
+        <Setter Property="GradientEndColor" Value="{x:Static tm_theming:AppColors.Primary800Color}" />
+        <Setter Property="GradientStartColor" Value="{x:Static tm_theming:AppColors.Primary500Color}" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="HeightRequest" Value="10" />
+        <Setter Property="CornerRadius" Value="6" />
+    </Style>
+    <!--<Style x:Key="GradientProgressOnPrimaryStyle" BasedOn="{StaticResource GradientProgressBarBaseStyle}" TargetType="tm_control:TmProgressBar">
+        <Setter Property="AlternativeTextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="BarBackgroundColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+        <Setter Property="GradientEndColor" Value="{x:Static tm_theming:AppColors.SignalBlueColor}" />
+        <Setter Property="GradientStartColor" Value="{x:Static tm_theming:AppColors.SignalBlueColor}" />
+        <Setter Property="TextColor" Value="{x:Static tm_theming:AppColors.WhiteColor}" />
+    </Style>-->
+    <!--  TmProfileImageView  -->
+    <Style x:Key="ProfileImageDefaultIconLabelStyle"
+           BasedOn="{StaticResource TmProfileImageDefaultIconLabelStyle}"
+           TargetType="Label">
+        <Setter Property="FontFamily" Value="LiberoIconsFont" />
+        <Setter Property="Text" Value="{x:Static theming:AppIconFont.Avatar_user}" />
+    </Style>
+    <Style x:Key="ProfileImageDefaultStyle" TargetType="tm_control:TmProfileImageView">
+        <Setter Property="DefaultIconFontBkgEllipse" Value="{StaticResource TmProfileImageDefaultIconFontBkgEllipseStyle}" />
+        <Setter Property="DefaultIconFontStyle" Value="{StaticResource ProfileImageDefaultIconLabelStyle}" />
+    </Style>
+    <!--  ______________________Styling Tm Controls___________________  -->
+   
+    
+
+</ResourceDictionary>
