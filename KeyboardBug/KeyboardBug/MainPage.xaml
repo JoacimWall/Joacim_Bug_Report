@@ -27,6 +27,7 @@
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
                 HorizontalOptions="Center" />
+            <Picker x:Name="MyPicker"></Picker>
             <Entry></Entry>
             <Button
                 x:Name="CounterBtn"
