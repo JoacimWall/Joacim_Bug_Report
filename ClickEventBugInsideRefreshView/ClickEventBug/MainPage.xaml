@@ -10,7 +10,7 @@
                       RowDefinitions="*"
                       RowSpacing="0"
                       VerticalOptions="Fill">
-        <RefreshView x:Name="RefreshView" Command="{Binding RefreshBooksCommand}" IsRefreshing="{Binding IsLoading}" MinimumHeightRequest="200" >
+        <RefreshView x:Name="RefreshView" Command="{Binding RefreshBooksCommand}" IsRefreshing="{Binding IsLoading}" >
             <CollectionView x:Name="PhotoBookListView"
                               Margin="0,0,0,3"
                               BackgroundColor="White" 
