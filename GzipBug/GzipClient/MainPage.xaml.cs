@@ -20,7 +20,8 @@ public partial class MainPage : ContentPage
 		count++;
         LoginRequest loginRequest = new LoginRequest { Email = "joacim.wall@gmail.com", Password = "test" };
         var result = await this.client.ExecutePostAsync<LoginResponse>("v1/login", loginRequest, null, false);
-       
+		if (result.Model != null)
+			await App.Current.MainPage.DisplayAlert("test", "Works", "Ok");
 		if (count == 1)
 			CounterBtn.Text = $"Clicked {count} time";
 		else

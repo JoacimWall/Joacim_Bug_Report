@@ -37,8 +37,9 @@ public class MyRestClient : IMyRestClient
 
     public MyRestClient()
     {
+        //this.client = new HttpClient(httpservice.GetPlatformMessageHandler());
 
-        this.client = new HttpClient(httpservice.GetPlatformMessageHandler());
+        this.client = new HttpClient();
        
         jsonOptions = new JsonSerializerOptions
         {
@@ -55,9 +56,9 @@ public class MyRestClient : IMyRestClient
 
         this.client = new HttpClient();
 #if IOS
-        this.client.BaseAddress = new Uri("https://localhost:7045/");
+        this.client.BaseAddress = new Uri("https://gzipbug.azurewebsites.net/");
 #else
-        this.client.BaseAddress = new Uri("http://10.0.2.2:5014/");
+        this.client.BaseAddress = new Uri("https://gzipbug.azurewebsites.net/");
 #endif
         this.client.Timeout = new TimeSpan(0, 0, 10);
 
