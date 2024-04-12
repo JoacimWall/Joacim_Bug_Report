@@ -1,0 +1,59 @@
+﻿{
+  "authentication": {
+    "logintoken": "eyJhbGcsOiJSUzI1NiIsImtpZdI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsiLCJ0eXAiOiJKV1QifQ.eyJpZHAiOiJMb2NhbEFjY291bnQiLCJvaWQiOiIxNjMxZjU4NC0yY2FhLTQ3ZDgtODBmZS0yZTg1MTM3MTZhZjciLCJzdWIiOiIxNjMxZjU4NC0yY2FhLTQ3ZDgtODBmZS0yZTg1MTM3MTZhZjciLCJuZXdVc2VyIjpmYWxzZSwiY291bnRyeSI6ImxpYmVyby5zZSIsImV4dGVuc2lvbl9NZW1iZXJOdW1iZXIiOjYwMDQyNzExNCwiZW1haWxzIjpbImp3ZnJ1LTIxQHlhaG9vLmNvbSJdLCJ0ZnAiOiJCMkNfMV9CYWJ5Uk9QQ19Nb2JpbGUiLCJzY3AiOiJjbHViIGZvcnVtIG1lbWJlcnNoaXAgcGhvdG9ib29rIHdlYnNpdGUgYXBpbS1zaG9waWZ5LWVhc3lhdXRoIHB1c2hub3RpZmljYXRpb24gbW9iaWxlIiwiYXpwIjoiNTg0OTNhYTYtMWExZi00NWExLWJiY2YtYWE1YjFkZmFhNTExIiwidmVyIjoiMS4wIiwiaWF0IjoxNzEyODU1ODc3LCJhdWQiOiI0ZWI4ODUxNy05Y2JlLTRhMWUtYWE0NC05M2Q3MjBlOGEwM2IiLCJleHAiOjE3MTI5NDIyNzcsImlzcyI6Imh0dHBzOi8vYmFieXdlYnByb2QuYjJjbG9naW4uY29tLzRmMmZiNDM0LTZkOGQtNDA0NS04YzUwLTU0ZDRiNjEyMzc3Yi92Mi4wLyIsIm5iZiI6MTcxMjg1NTg3N30.Vm4r9c6QIWq_suOWsw00wM3WEO57pjFJJelQPnwYCRexIXfy_hEEa6Vd1CqFu8p-2LsByD2N6PE5Iz1LY0FEg5DN66oMk7H5_5SuO1qVEhjUkRYBObBgpwTF6B_7-qoNf0CrAUEm6NSkh6UCTMW-ekZjfZdDHeQotgxYfh2G-dgCegZTRdkTQwrxI_FCfiVaYGyuC6IFKeg4fQkjHlVlbnmf0qb9ibAJbfREFR2FO0Vi9fQqbsS3o8Qnrs3QVs4vWyqu4f-oXwCzZWr0gburAqmLxb9HibZUcvIKCKcGMOLDTma4BjBh2Vq4uotncQKI6gZ4KN2zfV2XpNl9mth6QA",
+    "logintokenExpiration": "2024-04-12T17:17:58.02Z"
+  },
+  "userDetails": {
+    "gbwUserId": 600427114,
+    "familyMemberProfileId": 600427114,
+    "firstname": "Test Joacim",
+    "lastname": "Wall",
+    "membershipNumber": "600427114",
+    "email": "jwfru-21@yahoo.com",
+    "userStatus": 2,
+    "profileImageUrl": "https://saprodbabyappvb3o.blob.core.windows.net/userprofileimages/d0404cec-da9e-4131-b7b8-d15c1da2cb36.png?skoid=51d2c490-473d-4ba8-abb6-2e58e5c9b21a&sktid=f101208c-39d3-4c8a-8cc7-ad896b25954f&skt=2024-04-11T17%3A12%3A57Z&ske=2024-04-12T17%3A17%3A57Z&sks=b&skv=2023-11-03&sv=2023-11-03&st=2024-04-11T17%3A12%3A57Z&se=2024-04-12T17%3A17%3A57Z&sr=b&sp=r&sig=5nVsXExOq%2BC6P1jqD%2BMw77Ghy4pNYooJB4%2FcKL%2BNYrU%3D",
+    "isOnboarded": true,
+    "isOnboardingFormDone": false,
+    "isReconsentRequired": false,
+    "reconsentMessage": null,
+    "reconsentUrl": null,
+    "isAccountInactivated": false,
+    "pregnancyDueDate": null,
+    "countryIsoCode": "se",
+    "familyDetails": {
+      "familyId": 600427114,
+      "familyName": "Wall",
+      "familyImageUrl": "https://saprodbabyappvb3o.blob.core.windows.net/userprofileimages/d351ccdc-6307-4206-b1dd-cd16c98d8ec5.png?skoid=51d2c490-473d-4ba8-abb6-2e58e5c9b21a&sktid=f101208c-39d3-4c8a-8cc7-ad896b25954f&skt=2024-04-11T17%3A12%3A57Z&ske=2024-04-12T17%3A17%3A57Z&sks=b&skv=2023-11-03&sv=2023-11-03&st=2024-04-11T17%3A12%3A57Z&se=2024-04-12T17%3A17%3A57Z&sr=b&sp=r&sig=oPrnPVGCqY6VVSg3WrHlfoq%2BgIkpWelpLkXgQAfjkU4%3D",
+      "createdByGbwUserId": 600427114
+    },
+    "coParentDetails": null,
+    "children": [
+      {
+        "childId": 1,
+        "familyMemberProfileId": 1,
+        "childName": "petra ",
+        "birthDate": "2023-10-27T00:00:00Z",
+        "profileImageUrl": "https://saprodbabyappvb3o.blob.core.windows.net/userprofileimages/6d4ac6d0-b6c6-41ab-b9b7-dac26abcd3f8.png?skoid=51d2c490-473d-4ba8-abb6-2e58e5c9b21a&sktid=f101208c-39d3-4c8a-8cc7-ad896b25954f&skt=2024-04-11T17%3A12%3A57Z&ske=2024-04-12T17%3A17%3A57Z&sks=b&skv=2023-11-03&sv=2023-11-03&st=2024-04-11T17%3A12%3A57Z&se=2024-04-12T17%3A17%3A57Z&sr=b&sp=r&sig=YzSzmGA5fwA6wJ2IWHbSSfGPRI8257g%2FBrBdzNAoKC8%3D",
+        "hidden": false,
+        "birthdayVerified": true
+      }
+    ],
+    "addressForm": {
+      "coAddress": null,
+      "streetAddress1": null,
+      "postalCode": null,
+      "city": null,
+      "cellPhone": null
+    },
+    "tags": [
+      {
+        "title": "petra ",
+        "id": 1,
+        "profileImageUrl": "https://saprodbabyappvb3o.blob.core.windows.net/userprofileimages/6d4ac6d0-b6c6-41ab-b9b7-dac26abcd3f8.png?skoid=51d2c490-473d-4ba8-abb6-2e58e5c9b21a&sktid=f101208c-39d3-4c8a-8cc7-ad896b25954f&skt=2024-04-11T17%3A12%3A57Z&ske=2024-04-12T17%3A17%3A57Z&sks=b&skv=2023-11-03&sv=2023-11-03&st=2024-04-11T17%3A12%3A57Z&se=2024-04-12T17%3A17%3A57Z&sr=b&sp=r&sig=YzSzmGA5fwA6wJ2IWHbSSfGPRI8257g%2FBrBdzNAoKC8%3D"
+      }
+    ],
+    "familyInviteDetails": []
+  },
+  "mandatoryFieldMissing": false
+}
+
