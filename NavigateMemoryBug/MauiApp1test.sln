@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiApp1test", "MauiApp1test\MauiApp1test.csproj", "{B1449C53-337E-42B8-8D7F-B39DCDFAD060}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TietoEvry.Shared", "..\..\TietoEvryMauiFramework\scr\TietoEvry.Shared\TietoEvry.Shared.csproj", "{6B6D95C4-B218-4775-BAE2-82BF92BDB465}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TietoEvry.Maui", "..\..\TietoEvryMauiFramework\scr\TietoEvry.Maui\TietoEvry.Maui.csproj", "{B30FC6EA-1DD0-42DD-8CB2-777A3BA8F221}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{88A0B1AC-E6AC-4D27-B55D-798D8F7200A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88A0B1AC-E6AC-4D27-B55D-798D8F7200A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88A0B1AC-E6AC-4D27-B55D-798D8F7200A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B6D95C4-B218-4775-BAE2-82BF92BDB465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B6D95C4-B218-4775-BAE2-82BF92BDB465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B6D95C4-B218-4775-BAE2-82BF92BDB465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B6D95C4-B218-4775-BAE2-82BF92BDB465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B30FC6EA-1DD0-42DD-8CB2-777A3BA8F221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B30FC6EA-1DD0-42DD-8CB2-777A3BA8F221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B30FC6EA-1DD0-42DD-8CB2-777A3BA8F221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B30FC6EA-1DD0-42DD-8CB2-777A3BA8F221}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

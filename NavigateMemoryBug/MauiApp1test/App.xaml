@@ -2,13 +2,16 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MauiApp1test"
+             xmlns:theming1="clr-namespace:TietoEvry.Maui.Resources.Theming;assembly=TietoEvry.Maui"
              x:Class="MauiApp1test.App">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <theming1:TmSharedStyle />
             </ResourceDictionary.MergedDictionaries>
+           
         </ResourceDictionary>
     </Application.Resources>
 </Application>

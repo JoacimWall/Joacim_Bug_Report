@@ -19,7 +19,10 @@
                       ContentTemplate="{DataTemplate local:MainPage}"
     
                       Route="first" />
+        <ShellContent Title="Test 2"
+                      ContentTemplate="{DataTemplate local:MainPage}"
     
+                      Route="first2" />
     
     
     </TabBar>

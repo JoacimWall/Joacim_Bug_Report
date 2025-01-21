@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<tmView:BaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                        xmlns:tmView="clr-namespace:TietoEvry.Maui.Views;assembly=TietoEvry.Maui"
                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                        x:Class="MauiApp1test.Test">
+                        xmlns:mauiApp1Test="clr-namespace:MauiApp1test"
+                        xmlns:controls="clr-namespace:TietoEvry.Maui.Controls;assembly=TietoEvry.Maui"
+                        x:Class="MauiApp1test.Test"
+                        x:DataType="mauiApp1Test:TestViewModel">
     <ContentPage.Content>
-        <Button Text="Navigate Back" Clicked="Button_OnClicked"></Button>
+        <Grid RowDefinitions="Auto,*">
+            <controls:TmTitleView ControlStyle="{StaticResource TmTitleViewDefaultStyle}" 
+                                   InsideTitleView="False"
+                                   NavigateBackIsVisible="True"
+                                   TitleText="Test 1" />
+            <Button Grid.Row="1" Text="Navigate Back" Command="{Binding CloseViewCommand}" ></Button>
+        </Grid>
+        
     </ContentPage.Content>
-</ContentPage>
+</tmView:BaseContentPage>
