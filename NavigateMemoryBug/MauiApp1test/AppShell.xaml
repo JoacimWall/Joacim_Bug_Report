@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp1test.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp1test"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MauiApp1test">
+    <!-- WORKS THE VIEW GET GARBAGE COLLECTED  -->
+    <!-- <ShellContent -->
+    <!--     Title="Home" -->
+    <!--     ContentTemplate="{DataTemplate local:MainPage}" -->
+    <!--     Route="MainPage" /> -->
+    <!-- DOES NOT WORKS THE VIEW GET GARBAGE COLLECTED FIRST ON NEW NAVIGATE  -->
+    <!-- <TabBar x:Name="MyTabBar"> -->
+    <!-- -->
+    <!--     <ShellContent Title="Test" -->
+    <!--                   ContentTemplate="{DataTemplate local:MainPage}" -->
+    <!--                   -->
+    <!--                   Route="first" /> -->
+    <!--     -->
+    <!--     -->
+    <!--     -->
+    <!-- </TabBar> -->
+
+</Shell>
