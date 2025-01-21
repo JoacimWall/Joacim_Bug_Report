@@ -4,7 +4,7 @@ public partial class Test : ContentPage
 {
     public Test()
     {
-        GC.Collect(); 
+        //GC.Collect(); 
         InitializeComponent();
         
     }

@@ -33,7 +33,7 @@ public partial class MainPage : ContentPage
         {
             runGcCollectTimer = new System.Timers.Timer(10000);
             runGcCollectTimer.Elapsed += OnTimerRunGcCollect;
-            runGcCollectTimer.AutoReset = false;
+            runGcCollectTimer.AutoReset = true;
             runGcCollectTimer.Enabled = true;
         }
     }
@@ -48,7 +48,7 @@ public partial class MainPage : ContentPage
 
         GCMemoryInfo postmemInfo = GC.GetGCMemoryInfo();
 
-        Console.WriteLine( $"Before: {prememInfo.TotalCommittedBytes / Math.Pow(1024.0, 2):N2} MB / After: {postmemInfo.TotalCommittedBytes / Math.Pow(1024.0, 2):N2} MB");
+        Console.WriteLine( $"GC.Collect() Before: {prememInfo.TotalCommittedBytes / Math.Pow(1024.0, 2):N2} MB / After: {postmemInfo.TotalCommittedBytes / Math.Pow(1024.0, 2):N2} MB");
 
     }
 

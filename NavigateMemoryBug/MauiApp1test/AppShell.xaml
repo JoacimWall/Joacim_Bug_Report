@@ -11,16 +11,17 @@
     <!--     Title="Home" -->
     <!--     ContentTemplate="{DataTemplate local:MainPage}" -->
     <!--     Route="MainPage" /> -->
-    <!-- DOES NOT WORKS THE VIEW GET GARBAGE COLLECTED FIRST ON NEW NAVIGATE  -->
-    <!-- <TabBar x:Name="MyTabBar"> -->
-    <!-- -->
-    <!--     <ShellContent Title="Test" -->
-    <!--                   ContentTemplate="{DataTemplate local:MainPage}" -->
-    <!--                   -->
-    <!--                   Route="first" /> -->
-    <!--     -->
-    <!--     -->
-    <!--     -->
-    <!-- </TabBar> -->
+    
+    <!-- DOES NOT WORK THE VIEW GET GARBAGE COLLECTED FIRST ON NEW NAVIGATE  -->
+    <TabBar x:Name="MyTabBar">
+    
+        <ShellContent Title="Test"
+                      ContentTemplate="{DataTemplate local:MainPage}"
+    
+                      Route="first" />
+    
+    
+    
+    </TabBar>
 
 </Shell>
