@@ -23,7 +23,12 @@ public partial class App : Application
 
     protected override async void OnResume()
     {
-        await Task.Delay(1000);
+        await Task.Delay(2000);
+        //await ShowAlertAsync("OnStart", "Hello", "OK", null);
+        if (Current != null)
+        {
+            Windows[0].Page = new AppShell();
+        }
         // await ShowAlertAsync("OnResume", "Hello", "OK", null);
     }
 
